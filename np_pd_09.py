@@ -5,7 +5,7 @@ import matplotlib.font_manager as fm
 import requests
 
 data113 = pd.read_csv("113年全般詐欺手法及詐騙管道.csv",encoding="utf-8",usecols=[0,2,3])
-# print(data108_112.count()) #查無是否有缺失值
+print(data108_112.count()) #查無是否有缺失值
 print(data113.count())#查無是否有缺失值
 
 data113_internetfraud = data113.loc[(data113["詐騙管道"]=="網路詐騙")].reset_index(drop=True)
