@@ -32,8 +32,6 @@ data113_Receive_voicecall = data113.loc[(data113["詐騙管道"]=="接獲電話�
 
 print(data113["詐騙管道"].value_counts())
 print(data113.info())
-# print(data108_112["詐騙手法"].value_counts())
-# print(data108_112["年度"].value_counts())
 plt.rcParams["font.family"] = "Microsoft JhengHei"
 data113fraudchannel_counts = data113["詐騙管道"].value_counts().reset_index()
 data113fraudchannel_counts.columns = ["詐騙管道", "數量"]
