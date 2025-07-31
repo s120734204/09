@@ -9,7 +9,8 @@ data113 = pd.read_csv("113年全般詐欺手法及詐騙管道.csv",encoding="ut
 print(data113.count())#查無是否有缺失值
 
 #12行~15行，進行詐騙管道的分類，為避免索引值因分類時被打亂，故設定reset_index(drop=True)
-#reset_index重新設定索引值，(drop=True)將原本的索引值去掉，
+#reset_index重新設定索引值，(drop=True)將原本的索引值去掉
+
 data113_internetfraud = data113.loc[(data113["詐騙管道"]=="網路詐騙")].reset_index(drop=True)
 data113_gangsterPhonecall = data113.loc[(data113["詐騙管道"]=="接獲歹徒電話")].reset_index(drop=True)
 data113_directContact = data113.loc[(data113["詐騙管道"]=="直接與人接觸")].reset_index(drop=True)
