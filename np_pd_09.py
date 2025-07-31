@@ -38,26 +38,28 @@ print(data113.info())
 plt.rcParams["font.family"] = "Microsoft JhengHei"
 #第39行-value_counts()：計算每個「詐騙管道」出現的次數
 data113fraudchannel_counts = data113["詐騙管道"].value_counts().reset_index()
-#第42行-將欄位名稱改為「詐騙管道」與「數量」
+#第42行-將欄位名稱改為「詐騙管道」與「數量」(重新命名欄位)
 data113fraudchannel_counts.columns = ["詐騙管道", "數量"]
 
 #113年嘉義市詐騙管道總案件數
-plt.figure(figsize=(10,5))
+plt.figure(figsize=(10,5)) #設定畫布
+#第47行-畫直條圖
 plt.bar(data113fraudchannel_counts["詐騙管道"],
         data113fraudchannel_counts["數量"],
         zorder=10,width=0.7)
+#第51行-只加 y 軸的格線，並將格線放到長條圖之後，方便用於對照y軸值
 plt.grid(axis="y",zorder=0)
 plt.title("113年嘉義市詐騙管道案件數",fontsize=14)
+#第54~55行-在每個長柱的上方標示數值，較易查看該長條圖的數量，ha="center"：水平置中對齊柱子
 for i,value in enumerate(data113fraudchannel_counts["數量"]):
     plt.text(i, value, value, ha="center",va="bottom",fontsize=14)
 
-plt.xticks(fontsize=13)
-plt.ylim(0,2350)
-plt.ylabel("案件數",fontsize=14)
-
-plt.tight_layout()
-plt.savefig("113年嘉義市詐騙管道案件數.png")
-plt.show()
+plt.xticks(fontsize=13) # X軸字體大小設定
+plt.ylim(0,2350) # y軸最大值為 2350（可依實際數值微調）
+plt.ylabel("案件數",fontsize=14) # y軸標籤為「案件數」
+plt.tight_layout() #自動調整間距避免重疊
+plt.savefig("113年嘉義市詐騙管道案件數.png") #儲存圖檔
+plt.show() #顯示圖表
 
 #===========================================================
 data113_internetfraudcountsProfiling_top1 = pd.DataFrame(
