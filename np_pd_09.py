@@ -32,14 +32,15 @@ data113_Receive_voicecall = data113.loc[(data113["詐騙管道"]=="接獲電話�
 
 #第34行-查看每個類別出現的次數
 print(data113["詐騙管道"].value_counts())
+#第36行-查看整體資訊摘要
 print(data113.info())
+#第37行-設定matplotlib的字型為微軟正黑體Microsoft JhengHei)，在執行圖表時，有含中文的文字不會出現亂碼或空白。
 plt.rcParams["font.family"] = "Microsoft JhengHei"
 data113fraudchannel_counts = data113["詐騙管道"].value_counts().reset_index()
 data113fraudchannel_counts.columns = ["詐騙管道", "數量"]
 
 #113年嘉義市詐騙管道總案件數
 plt.figure(figsize=(10,5))
-
 plt.bar(data113fraudchannel_counts["詐騙管道"],
         data113fraudchannel_counts["數量"],
         zorder=10,width=0.7)
