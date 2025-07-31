@@ -36,6 +36,7 @@ print(data113["詐騙管道"].value_counts())
 print(data113.info())
 #第37行-設定matplotlib的字型為微軟正黑體Microsoft JhengHei)，在執行圖表時，有含中文的文字不會出現亂碼或空白。
 plt.rcParams["font.family"] = "Microsoft JhengHei"
+#第39行-value_counts()：計算每個「詐騙管道」出現的次數
 data113fraudchannel_counts = data113["詐騙管道"].value_counts().reset_index()
 data113fraudchannel_counts.columns = ["詐騙管道", "數量"]
 
