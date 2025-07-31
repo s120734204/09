@@ -30,6 +30,7 @@ data113_directContact_counts = data113.loc[(data113["詐騙管道"]=="直接與�
 data113_receiveSMS_counts = data113.loc[(data113["詐騙管道"]=="接獲手機簡訊")].value_counts().reset_index()
 data113_Receive_voicecall = data113.loc[(data113["詐騙管道"]=="接獲電話語音")].value_counts().reset_index()
 
+#第34行-查看每個類別出現的次數
 print(data113["詐騙管道"].value_counts())
 print(data113.info())
 plt.rcParams["font.family"] = "Microsoft JhengHei"
