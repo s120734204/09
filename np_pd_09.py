@@ -62,28 +62,6 @@ plt.savefig("113年嘉義市詐騙管道案件數.png") #儲存圖檔
 plt.show() #顯示圖表
 
 #===========================================================
-data113_internetfraudcountsProfiling_top1 = pd.DataFrame(
-    {"詐騙手法":["假投資","假網拍","解除分期付款(騙賣家)","假交友(投資詐財)","中獎通知"],
-    "數量":[545,305,229,171,150],
-    "數據分離":[0.11,0,0,0,0]})
-fig, ax = plt.subplots(figsize=(8,7), 
-                       facecolor = "#272727",
-                       subplot_kw=dict(aspect="equal"))
-plt.pie(data113_internetfraudcountsProfiling_top1["數量"],
-        autopct= "%.1f%%",
-        explode = data113_internetfraudcountsProfiling_top1["數據分離"],
-        textprops={'color':'w', 'weight':'bold', 'size':13})
-plt.legend(data113_internetfraudcountsProfiling_top1["詐騙手法"],
-           bbox_to_anchor=(1, 0, 0, 1),
-           edgecolor = "#5B5B5B",
-           fontsize=15)
-plt.title("113年嘉義市網路詐騙前五名",
-          fontsize = 18,
-          color="#FFFFFF",
-          weight='bold')
-plt.savefig("113年嘉義市網路詐騙前五名之錯誤.png")
-plt.show()    
-#---------------------------------------------------
 #113年嘉義市網路詐騙案件數前五名-圓餅圖
 data113_internetfraudcountsProfiling_top1 = pd.DataFrame(
     {"詐騙手法":["假投資","假網拍","解除分期付款(騙賣家)","假交友(投資詐財)","中獎通知"],
@@ -467,3 +445,4 @@ plt.show()
 #data113_internetfraud_Methods:113年的所有詐騙手法的分類與總數 
 #data113_internetfraud_month:113年所有月份之網路詐騙的總數(含詐騙手法)
 #data113_internetfraud_counts:113年網路詐騙的總數
+
